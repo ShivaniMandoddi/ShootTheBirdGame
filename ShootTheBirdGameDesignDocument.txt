@@ -1,0 +1,23 @@
+ShootTheBird
+
+Game Play:
+Player shoots the bird which are coming towards the player
+
+Steps To Design:
+Creating Environment
+Player to move Up and Down 
+Creating BUllets and Birds pool
+Shooting Bullet
+Birds Random Spawning
+Score increasing 
+When player collides with bird, life get decreases
+Collecting lives
+
+Win Condition:
+When player reaches high score.
+
+Lose Condition:
+When player's lives is equal to zero
+
+ 
+
