@@ -31,7 +31,14 @@ public class Bird : MonoBehaviour
     {
         if(collision.gameObject.layer==Constants.BULLET_LAYER_NUMBER)
         {
-
+            PoolManager.Instance.Recycle(Constants.BULLET_PREFAB_NAME,collision.gameObject);
+            PoolManager.Instance.Recycle(Constants.BIRD_PREFAB_NAME, this.gameObject);
+            GameManager.Instance.Score();
+        }
+        if(collision.gameObject.name==Constants.PLAYER_PREFAB_NAME)
+        {
+            PoolManager.Instance.Recycle(Constants.BIRD_PREFAB_NAME, this.gameObject);
+            GameManager.Instance.PlayerLiveDecrement();
         }
     }
     #endregion

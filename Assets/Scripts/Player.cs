@@ -27,6 +27,15 @@ public class Player : MonoBehaviour
 
         UserInput.UserInputHandler.OnTouchAction -= ChangeCoordinates;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer==Constants.LIFE_LAYER_NUMBER)
+        {
+            PoolManager.Instance.Recycle(Constants.LIFE_PREFAB_NAME, collision.gameObject);
+            GameManager.Instance.PlayerLiveIncrement();
+        }
+    }
+   
     #endregion
     #region PUBLIC METHODS
     public void ChangeCoordinates(Touch touch)
