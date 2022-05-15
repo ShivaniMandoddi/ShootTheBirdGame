@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     #region PUBLIC VARIABLES
-
+    public GameObject sparkEffect;
     #endregion
     #region PRIVATE VARIABLES
 
@@ -31,6 +31,7 @@ public class Bird : MonoBehaviour
     {
         if(collision.gameObject.layer==Constants.BULLET_LAYER_NUMBER)
         {
+            Destroy(Instantiate(sparkEffect, collision.gameObject.transform.position, Quaternion.identity), 2f);
             PoolManager.Instance.Recycle(Constants.BULLET_PREFAB_NAME,collision.gameObject);
             PoolManager.Instance.Recycle(Constants.BIRD_PREFAB_NAME, this.gameObject);
             GameManager.Instance.Score();

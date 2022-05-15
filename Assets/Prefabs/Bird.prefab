@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1163d7af8ea56459a5dcaf0b3345c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparkEffect: {fileID: 4988019051419055779, guid: ea069fcc9c50d164d95847b09f600447, type: 3}
 --- !u!50 &-5366001458054973332
 Rigidbody2D:
   serializedVersion: 4

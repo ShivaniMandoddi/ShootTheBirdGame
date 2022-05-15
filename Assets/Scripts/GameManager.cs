@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -89,6 +90,10 @@ public class GameManager : MonoBehaviour
     {
         lives--;
         lifeText.text = lives.ToString();
+        if(lives==0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     public void PlayerLiveIncrement()
     {
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
     #region PRIVATE METHODS
     private void WonGame()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     #endregion
 }
