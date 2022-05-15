@@ -22,8 +22,8 @@ public class Bullet : MonoBehaviour
         transform.Translate( Vector3.right * 4f * Time.deltaTime);
         if(transform.position.x>12)
         {
-            Debug.Log("I am invisible");
-            PoolManager.Instance.Recycle("Bullet", this.gameObject);
+            
+            PoolManager.Instance.Recycle(Constants.BULLET_PREFAB_NAME, this.gameObject);
         }
         
     }
