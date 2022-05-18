@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-    public class Constants
+    public class Constants // Storing prefab names and layers which are involve in the game
     {
         public const string BIRD_PREFAB_NAME = "Bird";
         public const string LIFE_PREFAB_NAME = "Life";

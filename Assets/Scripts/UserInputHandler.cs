@@ -28,9 +28,13 @@ namespace UserInput
 
         void Update()
         {
+            
+               
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.touches[0];  // Need to find out no. of touches on the screen. If there are more no. of touches, need to call array
+                
+       
                 if (touch.phase == TouchPhase.Began) // We have several touch phases, began enters the first frame of the touch
                 {
                     movement = Vector2.zero; //We made our movement to zero
@@ -38,6 +42,7 @@ namespace UserInput
                 else if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                 {
                     movement += touch.deltaPosition; // The position delta since last change in pixel coordinates.
+                    
                     if (movement.magnitude > tapMaxMovement)
                     {
                         tapGestureFailed = true;
@@ -60,6 +65,7 @@ namespace UserInput
 
             }
         }
+       
         #endregion
         #region PUBLIC METHODS
        

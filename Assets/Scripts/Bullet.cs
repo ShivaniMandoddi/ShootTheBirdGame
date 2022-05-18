@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     
     #endregion
     #region PRIVATE VARIABLES
-
+    private float bulletSpeed=6f;
     #endregion
     #region MONOBEHAVIOUR METHODS
     void Start()
@@ -19,8 +19,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate( Vector3.right * 4f * Time.deltaTime);
-        if(transform.position.x>12)
+        transform.Translate( Vector3.right * bulletSpeed * Time.deltaTime);      // Transforming the bullet in right direction with speed 
+        if(transform.position.x>12)         // When the bullet is out of screen, then we send back to pool
         {
             
             PoolManager.Instance.Recycle(Constants.BULLET_PREFAB_NAME, this.gameObject);
